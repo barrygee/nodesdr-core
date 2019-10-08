@@ -1,0 +1,46 @@
+{
+  "name": "nodesdr",
+  "version": "0.0.1",
+  "description": "NodeSDR is a network enabled software defined radio application",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.4.2",
+    "ws": "^7.1.1"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "chai-http": "^4.2.0",
+    "mocha": "^5.2.0"
+  },
+  "scripts": {
+    "test": "c8 --check-coverage --lines 100 mocha app/test",
+    "test-module-nodesdr-core-sdr-controls": "nyc mocha app/modules/nodesdr-core-sdr-controls/test",
+    "test-module-nodesdr-core-host-services": "nyc mocha app/modules/nodesdr-core-host-services/test",
+    "test-module-nodesdr-shipping-movements": "nyc mocha app/modules/nodesdr-shipping-movements/test -- ../../../config/config.json",
+    "test-module-nodesdr-adsb-decoder": "nyc mocha app/modules/nodesdr-adsb-decoder/test",
+    "test-coverage": "nyc mocha app/test",
+    "start": "node app/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/barrygee/NodeSDR.git"
+  },
+  "keywords": [
+    "NodeSDR",
+    "SDR",
+    "software",
+    "defined",
+    "radio"
+  ],
+  "author": "Barry Gee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/barrygee/NodeSDR/issues"
+  },
+  "homepage": "https://github.com/barrygee/NodeSDR#readme"
+}
