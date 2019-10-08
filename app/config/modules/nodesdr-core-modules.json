@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    {
+      "name": "NodeSDRCoreAdmin",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-core-admin.git"
+    },
+    {
+      "name": "NodeSDRCoreSDRController",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-core-sdr-controller.git"
+    }
+  ]
+}

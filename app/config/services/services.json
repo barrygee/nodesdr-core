@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    {
+      "name": "NodeSDRSomeService",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-some-service.git"
+    }
+  ]
+}

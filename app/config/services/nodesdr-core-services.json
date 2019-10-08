@@ -1,0 +1,8 @@
+{
+  "dependencies": [
+    {
+      "name": "NodeSDRCoreSDRConnectionService",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-core-sdr-connection-service.git"
+    }
+  ]
+}

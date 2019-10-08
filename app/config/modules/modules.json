@@ -1,0 +1,12 @@
+{
+  "dependencies": [
+    {
+      "name": "NodeSDRADSBDecoder",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-adsb-decoder.git"
+    },
+    {
+      "name": "NodeSDRShippingMovements",
+      "gitRepositoryURL": "https://github.com/barrygee/nodesdr-shipping-movements.git"
+    }
+  ]
+}
