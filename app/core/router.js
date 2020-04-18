@@ -1,10 +1,11 @@
-const express                           = require('express')
-const router                            = express.Router()
+const express = require('express')
+const router  = express.Router()
+const utils   = require('./utils')
 
 const { setup } = require('./services/NodeSDR_Setup_Service')
 // const NodeSDRCoreAdmin                  = require('../modules/nodesdr-core-admin/module')
 // const NodeSDR_Core_SDRController_Router = require('../modules/nodesdr-core-sdr-controller/router')
-// const adsbDecoderModuleRouter           = require('../modules/nodesdr-adsb-decoder/router/router')
+const adsbDecoderModuleRouter              = require('../modules/nodesdr-adsb-decoder/router')
 
 // default route
 router.get('/', (req, res) => {
@@ -22,7 +23,7 @@ router.get('/setup', (req, res) => setup().then(() => res.redirect('/')))
 // router.use('/sdr', NodeSDR_Core_SDRController_Router)
 
 // adsb-decoder
-// router.use('/adsb-decoder', adsbDecoderModuleRouter)
+router.use('/adsb-decoder', adsbDecoderModuleRouter.routes(utils))
 
 
 // catch all undefined routes - redirect back to the default route

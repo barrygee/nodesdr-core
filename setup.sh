@@ -1,16 +1,16 @@
 #!/bin/bash
 
-# This script will set up all NodeSDR core modules
+# This script will set up all NodeSDR modules
 # If modules already exist, they will be rebased back to their master. Merge conflicts should be resolved manually
 # You can skip the building of any modules by commenting them out in the list below
-NodeSDR_CORE_MODULES=(
-    nodesdr-core-sdr-controls
-    nodesdr-core-frontend
+NodeSDR_MODULES=(
+    nodesdr-sdr-controller
+    # nodesdr-frontend
     nodesdr-adsb-decoder
     nodesdr-shipping-movements
 )
 
-for module in "${NodeSDR_CORE_MODULES[@]}"; do
+for module in "${NodeSDR_MODULES[@]}"; do
 
     cd app/modules
 
@@ -22,34 +22,34 @@ for module in "${NodeSDR_CORE_MODULES[@]}"; do
         git checkout master
         git pull origin master
     
-    cd ../../../
+    cd ../../
 
 done
 
 
-NodeSDR_CUSTOM_MODULES=(
+#NodeSDR_CUSTOM_MODULES=(
     # https://github.com/barrygee/SOME-MODULE.git
     # https://github.com/barrygee/ANOTHER_MODULE.git
-)
+#)
 
-for moduleSourceURL in "${NodeSDR_CUSTOM_MODULES[@]}"; do
+#for moduleSourceURL in "${NodeSDR_CUSTOM_MODULES[@]}"; do
 
-	cd app/modules
+	#cd app/modules
 
-	if [ ! -d $moduleSourceURL ]; then
-        git clone $moduleSourceURL
-    fi
+	#if [ ! -d $moduleSourceURL ]; then
+        #git clone $moduleSourceURL
+    #fi
         
     # Get module name
     # Regex gets text between final '/' and '.git' in each NodeSDR_CUSTOM_MODULES URL
     # ${moduleSourceURL%.git} gets all text upto but not including '.git'
     # ${dir##*/} gets all text from but not including the final '/'
-    dir=${moduleSourceURL%.git} && dir=${dir##*/}
+    #dir=${moduleSourceURL%.git} && dir=${dir##*/}
 
-   	cd $dir
-    	git checkout master
-    	git pull origin master
+   	#cd $dir
+    	#git checkout master
+    	#git pull origin master
 
-    cd ../../../
+    #cd ../../
 
-done
+#done
